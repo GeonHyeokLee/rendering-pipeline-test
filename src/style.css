@@ -1,0 +1,98 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: transparent;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 80px;
+  color: white;
+  border-radius: 4px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.transform-box {
+  background-color: #34495e;
+  transition: transform .5s;
+}
+
+.left-box {
+  position: relative;
+  left: 0;
+  background-color: #0984e3;
+  transition: left .5s;
+}
+
+#box2 {
+  will-change: transform;
+}
+
+#box3 {
+  animation: moveToRightWithTransform .5s forwards;
+  animation-play-state: paused;
+}
+
+#box4 {
+  animation: moveToRightWithTransform .5s forwards;
+  animation-play-state: paused;
+  will-change: transform;
+}
+
+#box6 {
+  will-change: left;
+}
+
+#box7 {
+  animation: moveToRightWithLeft .5s forwards;
+  animation-play-state: paused;
+}
+
+#box8 {
+  animation: moveToRightWithLeft .5s forwards;
+  animation-play-state: paused;
+  will-change: left;
+}
+
+#run-btn {
+  max-width: 300px;
+  background-color: #252525;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+@keyframes moveToRightWithTransform {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes moveToRightWithLeft {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 400px;
+  }
+}
